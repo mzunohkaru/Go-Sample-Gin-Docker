@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,6 +13,6 @@ func main() {
 	})
 
 	e.Run(":8000")
-
-	fmt.Println("Hello world,")
 }
+
+
