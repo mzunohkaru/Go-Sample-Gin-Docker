@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  # services によって、コンテナを区切る
+  # 今回は、app コンテナのみ作成
+  app:
+    # app コンテナ
+    build: .
+    # app コンテナを作る際の Dockerfile がある場所を相対パスで記述
+    container_name: app_con
+    ports:
+      - "8080:8000"
+      # -"< コンテナ内のポート >:< ローカルでアクセスするポート >"
+      # main.go で 8000番 を指定しているので、コンテナ内のポートも 8000番
+    volumes:
+      # Dockerfile の COPY と同じような機能
+      - ./src:/app
+      # Dockerfile でコンテナ内のディレクトリとして app を作っているので、そこに src 配下をマウントする
+    tty: true
+    # コンテナがコマンドを実行し終えた後に落ちないようにする
+
