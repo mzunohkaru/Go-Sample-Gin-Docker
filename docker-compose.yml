@@ -7,7 +7,7 @@ services:
     # app コンテナ
     build: .
     # app コンテナを作る際の Dockerfile がある場所を相対パスで記述
-    container_name: app_cont_go_gin_sample
+    container_name: app_gin
     ports:
       - "8080:8000"
       # -"< コンテナ内のポート >:< ローカルでアクセスするポート >"
