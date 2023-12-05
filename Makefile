@@ -9,5 +9,5 @@ up:
 	docker compose up -d
 ps:
 	docker compose ps
-node:
-	docker compose exec node bash
+run:
+	docker-compose exec app go run main.go
